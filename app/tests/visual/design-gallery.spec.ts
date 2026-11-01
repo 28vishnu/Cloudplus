@@ -56,38 +56,11 @@ test('new regional language strings fit the narrow locale fixture', async ({ pag
   }
 });
 
-test('desktop sponsor card renders without external creative dependencies', async ({ page }) => {
-  await page.addInitScript(() => {
-    Object.assign(window, {
-      __TAURI_INTERNALS__: {
-        invoke: async (command: string) => {
-          if (command === 'cmd_get_supporter_status') return {
-            state: 'inactive', ad_free: false, message: '', terms_version: '2026-08-11',
-            terms_url: null, expires_at: null, offline_until: null, recovery_code_saved: false,
-          };
-          throw new Error(`Unexpected native command: ${command}`);
-        },
-      },
-    });
-  });
-  await page.goto('/?design-gallery&sponsor-preview');
-  await expect(page.getByRole('heading', { name: 'Sponsor placement preview' })).toBeVisible();
-
-  const banner = page.getByRole('complementary', { name: /Sponsored advertisement/ });
-  await expect(banner).toBeVisible();
-  await expect(banner).toContainText('A quick message from our sponsor');
-  await expect(banner).toContainText('Closes in 10s');
-
-  const layout = await banner.evaluate(element => ({
-    width: element.getBoundingClientRect().width,
-    fitsHorizontally: element.scrollWidth <= element.clientWidth,
-    fitsVertically: element.scrollHeight <= element.clientHeight,
-    hasIframe: element.querySelector('iframe') !== null,
-  }));
-  expect(layout.width).toBe(300);
-  expect(layout.fitsHorizontally).toBe(true);
-  expect(layout.fitsVertically).toBe(true);
-  expect(layout.hasIframe).toBe(false);
+test('design gallery contains no advertising surfaces', async ({ page }) => {
+  await page.goto('/?design-gallery');
+  await expect(page.getByRole('heading', { name: 'Quiet Utility gallery' })).toBeVisible();
+  await expect(page.getByText(/sponsored content|sponsor placement/i)).toHaveCount(0);
+  await expect(page.locator('#adsterra-banner-container, iframe[src*="ad-banner"]')).toHaveCount(0);
 });
 
 test('axe accessibility audit has no violation groups', async ({ page }) => {

@@ -572,7 +572,7 @@ function OwnedSettingsModal({ ownerId, isOpen, onClose, initialTab = 'general', 
         if (!webDavSettings.enabled && !settings.webdavPermissionExplained) {
             const understood = await confirm({
                 title: 'Before enabling WebDAV access',
-                message: 'WebDAV lets Finder and file managers browse your Telegram Drive through the complete token URL. The token is the credential: Guest or anonymous login has no access. Read-only mode is safest; enabling changes also permits uploads, moves, renames, and deletes.',
+                message: 'WebDAV lets Finder and file managers browse your Cloudplus through the complete token URL. The token is the credential: Guest or anonymous login has no access. Read-only mode is safest; enabling changes also permits uploads, moves, renames, and deletes.',
                 confirmText: 'I understand — enable',
                 variant: 'info',
             });

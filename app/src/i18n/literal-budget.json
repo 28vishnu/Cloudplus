@@ -4,9 +4,7 @@
     "supporterAndSponsors": {
       "maxFindings": 1,
       "patterns": [
-        "Supporter",
-        "AdBanner",
-        "Adsterra"
+        "Supporter"
       ]
     },
     "encryptionAndAccess": {

@@ -45,10 +45,11 @@ for (const capability of [mobile, desktop]) {
   }
 }
 if (!desktop.permissions.includes('opener:allow-reveal-item-in-dir')) throw new Error('Download reveal permission is required.');
-// Updates are fetched over HTTPS only, and verified with the configured public key.
+// A Cloudplus release feed has not been configured for this local source snapshot.
+// If one is configured later, require HTTPS and the signed updater public key.
 const updater = config.plugins?.updater;
-if (!updater?.pubkey || !updater.endpoints?.length || !updater.endpoints.every(value => value.startsWith('https://'))) {
-  throw new Error('Signed desktop updates require a public key and HTTPS endpoints.');
+if (updater?.endpoints?.length && (!updater.pubkey || !updater.endpoints.every(value => value.startsWith('https://')))) {
+  throw new Error('Configured desktop updates require a public key and HTTPS endpoints.');
 }
 // The published REST contract and the registered routes describe the same API.
 const routes = new Set([...fs.readFileSync(path.join(root, 'src-tauri/src/api_routes.rs'), 'utf8')

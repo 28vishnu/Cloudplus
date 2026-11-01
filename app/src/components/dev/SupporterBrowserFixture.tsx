@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
 import {Toaster} from 'sonner';
-import { SupporterOfferDialog } from '../shared/SupporterOfferDialog';
 import { SettingsModal } from '../desktop/dashboard/SettingsModal';
 import { MobileSupporterCard } from '../mobile/MobileSupporterCard';
 import i18n, { ensureLanguageResource } from '../../i18n';
@@ -11,8 +10,7 @@ export function SupporterBrowserFixture() {
   const params = new URLSearchParams(window.location.search);
   const language = params.get('locale') ?? 'en';
   const [ready, setReady] = useState(false);
-  const [offer, setOffer] = useState(!params.has('purchase'));
-  const [details, setDetails] = useState(params.has('purchase'));
+  const [details, setDetails] = useState(true);
   useEffect(() => {
     let live = true;
     void ensureLanguageResource(language).then(() => i18n.changeLanguage(language)).then(() => {
@@ -28,7 +26,6 @@ export function SupporterBrowserFixture() {
     <main className="min-h-screen bg-app-canvas p-4 text-app-text" data-supporter-fixture-ready={language}>
       <Toaster theme="dark" position="bottom-center" />
       <h1 className="sr-only">Supporter presentation fixture</h1>
-      {offer && <SupporterOfferDialog trigger="weekly" onClose={() => setOffer(false)} onOpenSupporter={() => { setOffer(false); setDetails(true); }} />}
       {details && (params.get('purchase')==='mobile' ? <MobileSupporterCard /> : <SettingsModal ownerId={null} isOpen initialTab="license" focusSupporter onClose={() => setDetails(false)} />)}
     </main>
   );

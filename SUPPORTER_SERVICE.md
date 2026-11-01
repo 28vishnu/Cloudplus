@@ -3,7 +3,7 @@
 The supporter feature in supported desktop and Android builds is backed by a Cloudflare Worker, D1, and PayPal Orders v2. The service verifies payment before issuing an Ed25519-signed entitlement bound to a device key. One entitlement supports up to three active supported devices in total, regardless of platform. The service deliberately does not request or store purchaser email addresses.
 
 > [!IMPORTANT]
-> The $5 one-time lifetime ad-free promise is a protected compatibility contract. Before changing this service, entitlement handling, advertisement visibility, secure storage, or release configuration, read [the supporter license invariants](SUPPORTER_LICENSE_INVARIANTS.md). Existing purchasers must retain their entitlement across updates and must never be required to pay again because of a refactor, refresh, outage, or backup failure.
+> The historical $5 one-time lifetime supporter promise is a protected compatibility contract. New Cloudplus builds no longer offer purchases and no longer contain advertising. Before changing this service, entitlement handling, secure storage, or release configuration, read [the supporter license invariants](SUPPORTER_LICENSE_INVARIANTS.md). Existing purchasers must retain their entitlement across updates and must never be required to pay again because of a refactor, refresh, outage, or backup failure.
 
 ## Security and privacy model
 
