@@ -1,31 +1,23 @@
 <div align="center">
 
-<img src="Docs/assets/logo.svg" alt="Telegram Drive logo" width="92">
+<img src="Docs/assets/logo.svg" alt="Cloudplus logo" width="92">
 
-# Telegram Drive
+# Cloudplus
 
 ### A local-first file workspace powered by your own Telegram account
 
 Organize, transfer, preview, stream, sync, and share the files you keep in Saved Messages and Telegram channels—on Windows, macOS, Linux, Android, and Google TV.
 
-[![Latest release](https://img.shields.io/github/v/release/caamer20/Telegram-Drive?display_name=tag&sort=semver)](https://github.com/caamer20/Telegram-Drive/releases/latest)
-[![Platform](https://img.shields.io/badge/platform-Windows%20%7C%20macOS%20%7C%20Linux%20%7C%20Android-blue)](https://github.com/caamer20/Telegram-Drive/releases)
-[![GitHub Downloads (all assets, all releases)](https://img.shields.io/github/downloads/caamer20/Telegram-Drive/total?style=flat)](https://github.com/caamer20/Telegram-Drive/releases)
-[![Release](https://github.com/caamer20/Telegram-Drive/actions/workflows/release.yml/badge.svg)](https://github.com/caamer20/Telegram-Drive/actions/workflows/release.yml)
-[![oosmetrics](https://api.oosmetrics.com/api/v1/badge/achievement/ae8e5a6b-e815-4799-a408-4a59980cf9c8.svg)](https://oosmetrics.com/repo/caamer20/Telegram-Drive)
-[![oosmetrics](https://api.oosmetrics.com/api/v1/badge/achievement/029fb97b-a54a-4566-a1eb-aa1a5039065d.svg)](https://oosmetrics.com/repo/caamer20/Telegram-Drive)
-[![oosmetrics](https://api.oosmetrics.com/api/v1/badge/achievement/2aa6f3f9-fd8a-4523-bd73-6625ee6a948a.svg)](https://oosmetrics.com/repo/caamer20/Telegram-Drive)
-
-[Download for desktop](https://github.com/caamer20/Telegram-Drive/releases/latest) · [Download Android 4.1.0](https://github.com/caamer20/Telegram-Drive/releases/tag/Androidv4.1.0) · [Product website](https://telegram-drive.com/) · [Changelog](CHANGELOG.md)
+[Changelog](CHANGELOG.md)
 
 </div>
 
-![Telegram Drive desktop dashboard](Docs/assets/dashboard.webp)
+![Cloudplus desktop dashboard](Docs/assets/dashboard.webp)
 
-Telegram Drive turns Telegram's familiar file storage into a focused, desktop-style workspace. The app connects directly to Telegram with credentials you provide; it does not run a separate file-storage or relay service. Every application feature is available without payment.
+Cloudplus turns Telegram's familiar file storage into a focused, desktop-style workspace. The app connects directly to Telegram with credentials you provide; it does not run a separate file-storage or relay service. Every application feature is available without payment.
 
 > [!IMPORTANT]
-> Telegram Drive is an independent project and is not affiliated with Telegram FZ-LLC. Files remain subject to Telegram's account, service, and per-file limits. Telegram Drive should not be treated as literally unlimited storage or as the only backup of important data.
+> Cloudplus is an independent project and is not affiliated with Telegram FZ-LLC. Files remain subject to Telegram's account, service, and per-file limits. Cloudplus should not be treated as literally unlimited storage or as the only backup of important data.
 
 ## Contents
 
@@ -51,32 +43,19 @@ Telegram Drive turns Telegram's familiar file storage into a focused, desktop-st
 | **Desktop integrations** | Folder Sync, local REST API, WebDAV, local share links, tray controls, and native notifications |
 | **Privacy** | Local configuration and caches, opt-in crash reporting, loopback-only local servers, and no separate file relay |
 | **Languages** | 24 selectable locales plus automatic system-language selection |
-| **Price** | Every feature is free; an optional one-time $5 supporter license removes sponsor placements for life on up to three supported devices total |
+| **Price** | Every feature is free and current builds are ad-free for everyone; existing lifetime supporter activations remain verifiable and recoverable |
 
-## Download and install
+## Install and release status
 
-Desktop **4.1.2** and Android / Google TV **4.1.0** use separate version lines. The desktop release does not update or include Android or Google TV. Downloads are listed below.
-
-| Platform | Download | Notes |
-| --- | --- | --- |
-| **Windows x64** | [Installer](https://github.com/caamer20/Telegram-Drive/releases/download/v4.1.2/Telegram.Drive_4.1.2_x64-setup.exe) | Includes the required Microsoft Visual C++ runtime setup |
-| **macOS — Apple Silicon** | [DMG](https://github.com/caamer20/Telegram-Drive/releases/download/v4.1.2/Telegram.Drive_4.1.2_aarch64.dmg) | For M-series Macs |
-| **macOS — Intel** | [DMG](https://github.com/caamer20/Telegram-Drive/releases/download/v4.1.2/Telegram.Drive_4.1.2_x64.dmg) | For Intel-based Macs |
-| **Linux x64** | [AppImage](https://github.com/caamer20/Telegram-Drive/releases/download/v4.1.2/Telegram.Drive_4.1.2_amd64.AppImage) · [Debian](https://github.com/caamer20/Telegram-Drive/releases/download/v4.1.2/Telegram.Drive_4.1.2_amd64.deb) · [RPM](https://github.com/caamer20/Telegram-Drive/releases/download/v4.1.2/Telegram.Drive-4.1.2-1.x86_64.rpm) · [Arch](https://github.com/caamer20/Telegram-Drive/releases/download/v4.1.2/telegram-drive-bin-4.1.2-1-x86_64.pkg.tar.zst) | Choose your distribution; Arch updates remain managed by pacman |
-| **Android phones and tablets** | [Signed universal APK](https://github.com/caamer20/Telegram-Drive/releases/download/Androidv4.1.0/Telegram-Drive-v4.1.0-android-universal.apk) | Android 7.0 or newer; supports ARM64, ARMv7, x86, and x86_64 |
-| **Android TV / Google TV** | [Signed TV-compatible APK](https://github.com/caamer20/Telegram-Drive/releases/download/Androidv4.1.0/Telegram-Drive-v4.1.0-android-universal.apk) | The same universal package includes the TV launcher and remote navigation |
-
-The new desktop workspace adds collections, saved searches, a media timeline, Continue Watching, offline trip packs, transfer activity, storage controls, cleanup, and sync previews. Android 4.1.0 includes the latest native media and offline improvements and fixes the folder sidebar reported in [issue #212](https://github.com/caamer20/Telegram-Drive/issues/212). Install the signed APK over your existing app to preserve its data and activation.
-
-Desktop release assets also include updater/signature sidecars where applicable. Download installers only from this repository's GitHub Releases page. See the [Linux packaging and rendering guide](Docs/LINUX_PACKAGING.md) for Arch installation, updater ownership, diagnostics, and AppImage safe mode.
+This workspace is a local source snapshot. No Cloudplus repository remote or published Cloudplus release is configured here, so it does not link to Cloudplus downloads or claim a Cloudplus APK is available. Desktop update checks stay disabled until an authorized Cloudplus HTTPS feed and signing configuration are supplied. Build locally using the instructions below. Android source remains local; signed APKs are distributed as binary-only release assets after owner-controlled signing and release checks.
 
 ## First-time setup
 
-Telegram requires third-party clients to use an application API ID and API hash. Telegram Drive does not provide shared credentials.
+Telegram requires third-party clients to use an application API ID and API hash. Cloudplus does not provide shared credentials.
 
 1. Sign in at [my.telegram.org](https://my.telegram.org) and open **API development tools**.
 2. Create a Telegram application and copy its `api_id` and `api_hash`.
-3. Install and open Telegram Drive, then enter those credentials locally.
+3. Install and open Cloudplus, then enter those credentials locally.
 4. Authenticate with your phone number and login code, or use QR login. If Telegram cloud-password protection is enabled, complete that step as well.
 5. Open **Saved Messages** or select/create Telegram channels to use as folders.
 
@@ -85,7 +64,7 @@ Telegram requires third-party clients to use an application API ID and API hash.
 
 ## How it works
 
-Telegram Drive uses Telegram's MTProto API for authentication and file operations:
+Cloudplus uses Telegram's MTProto API for authentication and file operations:
 
 - **Saved Messages** appears as the main personal storage location.
 - Telegram **channels** created or selected by the app can appear as folders.
@@ -128,7 +107,7 @@ The application caps a Telegram object at exactly **2,000,000,000 bytes**. Encry
 - Video playback with seeking, HLS/fMP4 streaming, remuxing/transcoding fallbacks, and cache recovery for supported plaintext media.
 - Desktop MP4/M4V/MOV uploads in Media mode attach a locally generated JPEG preview and video dimensions/duration. Windows uses its native media decoder first; macOS/Linux need FFmpeg. If decoding is unavailable, choose File mode. Original video bytes are preserved; immediate streaming requires early MP4 metadata.
 - Native Android playback with system media controls, resume, subtitle/audio-track selection, playback speed, and Picture-in-Picture where supported.
-- ZIP, RAR, and 7z archive browsing and extraction, including extraction back into Telegram Drive where the platform supports it.
+- ZIP, RAR, and 7z archive browsing and extraction, including extraction back into Cloudplus where the platform supports it.
 - Offline preview-cache controls for recently viewed standard files.
 - Recorded plain previews, thumbnails and ready offline copies from 3.9.x retain external opening after an update. The first open verifies and registers each private cache file; arbitrary files and edited copies remain refused.
 
@@ -139,11 +118,11 @@ Some media depends on operating-system codec support or FFmpeg. Supported protec
 - Password-protected local download links with optional expiration, listing, and revocation.
 - Native Telegram message links for files in public channels.
 - An opt-in desktop REST API for programmatic file, folder, bulk, storage, thumbnail, and media operations.
-- Opt-in desktop WebDAV access for mounting Telegram Drive in compatible file managers.
+- Opt-in desktop WebDAV access for mounting Cloudplus in compatible file managers.
 - Optional, passphrase-encrypted settings backup through the user's own Telegram Saved Messages. Credentials, API/WebDAV keys, supporter activation, proxy details, and file data are excluded.
 
 > [!NOTE]
-> REST, WebDAV, and Telegram Drive share links are served by the running desktop application. They are not hosted public internet links. Keep the app open, do not forward its local ports, and protect every generated password, key, and capability URL.
+> REST, WebDAV, and Cloudplus share links are served by the running desktop application. They are not hosted public internet links. Keep the app open, do not forward its local ports, and protect every generated password, key, and capability URL.
 
 ### Personalization, language, and network controls
 
@@ -165,13 +144,13 @@ Screenshots show representative workflows; small details may change between rele
 
 | Folder and list management | Video playback |
 | --- | --- |
-| ![Telegram Drive desktop folder list](Docs/assets/folders.webp) | ![Telegram Drive desktop video player](Docs/assets/video.webp) |
+| ![Cloudplus desktop folder list](Docs/assets/folders.webp) | ![Cloudplus desktop video player](Docs/assets/video.webp) |
 
 ### Android
 
 | Files | Transfer queue |
 | --- | --- |
-| ![Telegram Drive Android file list](Docs/assets/android-folders.webp) | ![Telegram Drive Android transfer queue](Docs/assets/android-transfers.webp) |
+| ![Cloudplus Android file list](Docs/assets/android-folders.webp) | ![Cloudplus Android transfer queue](Docs/assets/android-transfers.webp) |
 
 Additional desktop and mobile captures are available in the [`screenshots`](screenshots/) directory.
 
@@ -195,7 +174,7 @@ Folder Sync is disabled until enabled in **Settings → Folder Sync**. Read the 
 
 See the [frozen format specification](Docs/TDENC2_FORMAT.md) and [recovery drill](Docs/ENCRYPTION_RECOVERY_DRILL.md).
 
-Telegram Drive includes opt-in encrypted transfers using the versioned **TDENC2** envelope. Standard uploads remain the default. Encryption can be selected as a default for future uploads or chosen for an individual upload.
+Cloudplus includes opt-in encrypted transfers using the versioned **TDENC2** envelope. Standard uploads remain the default. Encryption can be selected as a default for future uploads or chosen for an individual upload.
 
 | Mode | Protection | Required to unlock |
 | --- | --- | --- |
@@ -207,7 +186,7 @@ Telegram Drive includes opt-in encrypted transfers using the versioned **TDENC2*
 The implementation provides streaming XChaCha20-Poly1305 encryption before upload, authenticated streaming downloads, optional protection of the original filename and MIME type, vault auto-lock controls, recovery-bundle export/import, per-file state badges, and encryption-aware transfer queues.
 
 > [!CAUTION]
-> **Telegram Drive cannot recover, reset, or reconstruct a lost vault passphrase, file passphrase, encryption key, or unusable recovery bundle.** Protect and test your recovery material and keep an independent backup of important files. Lost credentials or damaged recovery material can make encrypted data permanently unrecoverable.
+> **Cloudplus cannot recover, reset, or reconstruct a lost vault passphrase, file passphrase, encryption key, or unusable recovery bundle.** Protect and test your recovery material and keep an independent backup of important files. Lost credentials or damaged recovery material can make encrypted data permanently unrecoverable.
 
 The encryption design and implementation have **not received an independent security audit**. Use isolated test data first. This frozen-format beta is not a substitute for a tested backup strategy.
 
@@ -241,7 +220,7 @@ Read the complete [Privacy Policy](PRIVACY.md), [WebDAV guide](WEBDAV_GUIDE.md),
 
 ## Languages
 
-Telegram Drive supports a **System** language preference and these 24 selectable locales:
+Cloudplus supports a **System** language preference and these 24 selectable locales:
 
 | | | | |
 | --- | --- | --- | --- |
@@ -254,25 +233,13 @@ Telegram Drive supports a **System** language preference and these 24 selectable
 
 Locale selection and formatting are production-supported. Authentication, encryption, desktop supporter copy and visible data arrays use canonical translations, and the eleven large locales have zero copied-English findings. Mobile follow-up changes remain local under the owner’s pre-commit hook. Noncritical English copy and full native-language, legal-copy, RTL, long-string, CJK and device review remain outstanding; see [the measured locale review](Docs/LOCALIZATION_BUDGET_REVIEW.md).
 
-## Optional $5 lifetime ad-free supporter license
+## Legacy lifetime supporter activations
 
-Every Telegram Drive feature is available to non-paying users. Supported desktop and Android builds offer an optional **$5.00 USD Lifetime Ad-Free Supporter License** that removes sponsor placements on up to three supported Windows, macOS, Linux, or Android devices in total after one verified PayPal payment.
+Current builds are ad-free for everyone and do not offer new supporter purchases. The legacy activation section remains available for existing purchasers to verify status, refresh a saved entitlement, resolve a checkout already started on an earlier build, or restore access with a recovery code. Existing signed entitlements and the three-device limit remain compatible. Refunds, payment reversals, chargebacks, or upheld disputes follow the [historical Supporter Terms](SUPPORTER_TERMS.md).
 
-- It is a one-time purchase, **not a subscription**.
-- Existing purchasers are not required to pay again after normal application updates.
-- Active and offline-grace entitlements keep sponsor placements hidden.
-- Reinstallation or another device can be restored with the recovery code, subject to the three-device allowance.
-- Checkout is available only inside **Settings → Privacy → Supporter**.
-- Payment does not create a Telegram Drive account or purchaser email profile.
+## Android release
 
-> [!WARNING]
-> Save the recovery code shown after activation. Payment alone does not bypass verification. Refunds are not automatic or guaranteed except where required by law. A refund, payment reversal, chargeback, or upheld dispute revokes the associated ad-free entitlement. Read the [Supporter Terms](SUPPORTER_TERMS.md) before paying.
-
-## Android and Google TV (signed APK)
-
-The Android build is currently distributed separately from the desktop release as a signed sideload release. It is not available through Google Play.
-
-1. Open the [Android / Android TV 4.1.0 release](https://github.com/caamer20/Telegram-Drive/releases/tag/Androidv4.1.0).
+The Android build is distributed separately from desktop builds. Build from the local source with the Android toolchain; sign using owner-controlled credentials that stay outside the repository. Only the compiled APK and checksum may be published as Android release assets. Hosted workflows must not publish Android project/source files under the current repository policy.
 2. Download the signed universal Android APK listed in that release.
 3. On Android, allow **Install unknown apps** for the browser or file manager you used.
 4. Open the APK and choose **Install**.
@@ -285,7 +252,7 @@ Android requirements and notes:
 - Google TV users can transfer the APK to the television or install it with ADB:
 
   ```bash
-  adb install -r Telegram-Drive-v4.1.0-android-universal.apk
+  adb install -r Cloudplus-v4.1.2-android-universal.apk
   ```
 
 - Android validates the package signature during installation. Future compatible updates must use the same signing identity.
@@ -309,7 +276,7 @@ Do not expose these ports to a LAN or the internet. See the [REST API endpoint r
 | Document | Purpose |
 | --- | --- |
 | [Changelog](CHANGELOG.md) | Release notes, compatibility information, and upgrade history |
-| [Privacy Policy](PRIVACY.md) | Local data, Telegram data flow, crash reporting, sponsors, sharing, and supporter privacy |
+| [Privacy Policy](PRIVACY.md) | Local data, Telegram data flow, crash reporting, sharing, and legacy supporter privacy |
 | [Security Policy](SECURITY.md) | Private vulnerability reporting, redaction guidance, and responsible testing boundaries |
 | [Folder Sync guide](SYNC_GUIDE.md) | Sync safety model, limits, conflict resolution, and integration behavior |
 | [WebDAV guide](WEBDAV_GUIDE.md) | Setup instructions for macOS, Windows, and Linux clients |
@@ -353,8 +320,7 @@ Common requirements:
 ### Install and run
 
 ```bash
-git clone https://github.com/caamer20/Telegram-Drive.git
-cd Telegram-Drive/app
+cd app
 npm ci
 npm run tauri dev
 ```
@@ -390,34 +356,15 @@ The application is built with Tauri 2, Rust, React 19, TypeScript, Tailwind CSS 
 
 ## Support and community
 
-- Report reproducible, non-sensitive problems through [GitHub Issues](https://github.com/caamer20/Telegram-Drive/issues).
-- Use [GitHub Discussions](https://github.com/caamer20/Telegram-Drive/discussions) for questions, ideas, and general feedback.
+No Cloudplus issue tracker or repository remote is configured in this source snapshot. Supply the authorized Cloudplus repository address before adding project support, discussion, or release links.
 - Never include Telegram credentials, session data, payment identifiers, recovery codes, encryption keys, private filenames, or file contents in a public report.
 - For a sensitive security report, follow the private-disclosure guidance in the [Security Policy](SECURITY.md).
-
-Direct cryptocurrency tips help support development but **do not** activate the lifetime ad-free entitlement:
-
-<div align="center">
-
-<a href="litecoin:ltc1q6wkr5ac4u0pxx4hx7xgwn0gsaku25ws0df73rp">
-  <img src="https://img.shields.io/badge/Donate-LTC-345D9D?style=for-the-badge&logo=litecoin&logoColor=white" alt="Donate Litecoin">
-</a>
-
-`ltc1q6wkr5ac4u0pxx4hx7xgwn0gsaku25ws0df73rp`
-
-<a href="bitcoin:bc1q5pt7m2fk6w0dzsnf6vvd5k6nw5k44785286ujy">
-  <img src="https://img.shields.io/badge/Donate-BTC-F7931A?style=for-the-badge&logo=bitcoin&logoColor=white" alt="Donate Bitcoin">
-</a>
-
-`bc1q5pt7m2fk6w0dzsnf6vvd5k6nw5k44785286ujy`
-
-</div>
 
 ---
 
 <div align="center">
 
-Telegram Drive is not affiliated with Telegram FZ-LLC. Use the application responsibly and in accordance with Telegram's terms and applicable law.
+Cloudplus is not affiliated with Telegram FZ-LLC. Use the application responsibly and in accordance with Telegram's terms and applicable law.
 
 </div>
 

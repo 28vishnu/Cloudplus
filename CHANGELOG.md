@@ -1,3 +1,23 @@
+## Unreleased — Cloudplus transformation
+
+### Advertising and legacy supporter compatibility
+
+- Remove ad placements, ad-network requests, sponsor link handling, ad-specific loopback routes, authentication donation prompts, crypto donation links, and new checkout offers from the application.
+- Keep historical supporter token verification, refresh, recovery, device-limit, revocation, terms, and completion of checkouts already started on older versions.
+- Record the owner-approved compatibility migration in `SUPPORTER_AD_REMOVAL_MIGRATION.md`.
+- Keep Android project/source local; the release path remains a locally signed APK published only as a binary release asset.
+
+### Cloudplus identity and interface
+
+- Rebrand the app UI, primary documentation, Tauri product name, and window title to Cloudplus while preserving the established application identifier for data and signature continuity.
+- Add a restrained Liquid Glass layer with light/dark surfaces, gradient highlights, adaptive blur, safe-area navigation, and reduced-motion/fallback behavior.
+- Remove legacy Telegram Drive update feeds. Desktop update checks remain unavailable until an authorized Cloudplus HTTPS feed and signing configuration are supplied.
+- Keep Android source local and require a locally signed APK for any binary-only Android release.
+
+### Verification status
+
+- The repository test-policy check, app security/config check, locale structure validation, and JSON parsing passed. Locale literal scanning, build, browser/native/Worker E2E, and APK signing were not run because project dependencies and the Rust/Android toolchains are unavailable. The supplied source archive has no Git metadata or configured Cloudplus remote.
+
 ## [4.1.2] - 2026-10-14
 
 ### Desktop video streaming metadata

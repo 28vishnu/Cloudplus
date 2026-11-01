@@ -1,6 +1,6 @@
 {
   "identifier": "default",
-  "description": "Standard permissions for Telegram Drive",
+  "description": "Standard permissions for Cloudplus",
   "platforms": [
     "linux",
     "macOS",

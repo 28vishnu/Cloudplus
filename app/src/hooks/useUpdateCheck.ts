@@ -1,10 +1,9 @@
 import { useState, useEffect, useCallback, useRef } from 'react';
 import type { Update } from '@tauri-apps/plugin-updater';
 import type { UpdateInstallPhase } from '../services/updateReliability';
-import { openUrl } from '@tauri-apps/plugin-opener';
-import { getInstallationInfo, RELEASES_URL } from '../services/installationInfo';
+import { getInstallationInfo } from '../services/installationInfo';
 import { useSettings } from '../context/SettingsContext';
-import { INITIAL_UPDATE_CHECK_DELAY_MS, UPDATE_RECHECK_INTERVAL_MS } from '../services/updatePolicy';
+import { CLOUDPLUS_UPDATE_FEED_CONFIGURED, INITIAL_UPDATE_CHECK_DELAY_MS, UPDATE_RECHECK_INTERVAL_MS } from '../services/updatePolicy';
 
 interface UpdateState {
     checking: boolean;
@@ -47,6 +46,11 @@ export function useUpdateCheck() {
     const automaticChecks = isLoaded && settings.autoUpdate !== false;
 
     const checkForUpdates = useCallback((): Promise<UpdateCheckResult> => {
+        if (!CLOUDPLUS_UPDATE_FEED_CONFIGURED) {
+            const error = 'Cloudplus updates are unavailable until an authorized update feed is configured.';
+            setState(s => ({ ...s, checking: false, error }));
+            return Promise.resolve({ version: null, error });
+        }
         if (checkPromise.current) return checkPromise.current;
         if (installPromise.current) return Promise.resolve({ version: currentVersion.current, error: null });
 
@@ -95,14 +99,9 @@ export function useUpdateCheck() {
         const operation = (async (): Promise<UpdateInstallResult> => {
             setState(s => ({ ...s, checking: false }));
             if (state.managedByPackageManager) {
-                try {
-                    await openUrl(RELEASES_URL);
-                    return { error: null };
-                } catch (err: unknown) {
-                    const message = err instanceof Error ? err.message : String(err);
-                    setState(s => ({ ...s, error: message }));
-                    return { error: message };
-                }
+                const message = 'Cloudplus releases are not configured for this installation.';
+                setState(s => ({ ...s, error: message }));
+                return { error: message };
             }
 
             setState(s => ({ ...s, downloading: true, progress: 0, phase: 'downloading', error: null }));

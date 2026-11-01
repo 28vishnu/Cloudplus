@@ -1,7 +1,7 @@
 [package]
 name = "app"
 version = "4.1.2"
-description = "A local-first file workspace for files stored in Telegram, built with Tauri, Rust, and React."
+description = "Cloudplus is a Telegram-powered cloud storage application built with Tauri, Rust, and React."
 authors = ["Cameron Amer"]
 edition = "2021"
 # Oldest compiler the release workflows build with; raise it deliberately
